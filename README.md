@@ -15,7 +15,6 @@ Announcement and event cards, rendered at OG (1200×630) and square (1080×1080)
 | `judge-chase-{og,square}.png` · `judge-junfan-{og,square}.png` | Per-judge "I'm judging" cards |
 | `sponsor-rerun-{og,square}.png` | Rerun sponsor card *(hold until announce)* |
 | `hacker-accepted-{og,square}.png` | "I'm in" card for accepted hackers to post |
-| `event-openhouse-{og,square}.png` | Residency × Mission Robotics Open House (Jun 29) |
 
 ## Grabbing a raw URL
 
