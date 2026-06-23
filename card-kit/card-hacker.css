@@ -1,0 +1,47 @@
+/* ============================================================
+   card-hacker.css — participant "I'm hacking" EXTENSIONS only.
+   Loaded AFTER card-brand.css. Reuses every brand font / color /
+   logo treatment from card-brand.css and adds ONLY the pieces a
+   hacker card needs: the "I'M IN" eyebrow, the big "I'm hacking"
+   hero line, and the "Build with us" CTA. No brand token redefined.
+   ============================================================ */
+
+/* I'M IN eyebrow — Inter, spaced caps, green (same rhythm as judge/sponsor) */
+.eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--green);
+}
+
+/* Hero line — "I'm hacking" in Archivo Black (the one place it's used),
+   same treatment as .wordmark so the lockup stays on-brand. The event
+   name sits inside as an Instrument-Serif italic green phrase. */
+.hacker-line{
+  font-family:'Archivo Black',sans-serif;
+  font-weight:400;
+  color:var(--cream);
+  line-height:0.98;
+  letter-spacing:-0.012em;
+  text-transform:uppercase;
+  text-shadow:0 0 70px rgba(70,224,122,0.12);
+}
+/* the event title, set apart in serif italic green inside the hero */
+.hacker-line .event{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+  font-style:italic;
+  color:var(--green);
+  text-transform:none;
+  letter-spacing:0.005em;
+  text-shadow:none;
+}
+
+/* date / place line under the hero — Instrument Serif cream */
+.hacker-when{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+  color:var(--cream);
+  letter-spacing:0.005em;
+}

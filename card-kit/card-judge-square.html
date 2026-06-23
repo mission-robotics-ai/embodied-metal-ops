@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- brand tokens -->            <link rel="stylesheet" href="card-brand.css">
+<!-- judge-card extensions -->   <link rel="stylesheet" href="card-judge.css">
+<style>
+  /* ===== card-judge-square.html — LAYOUT + per-canvas font-SIZES ONLY =====
+     1080×1080. Brand fonts/colors/logo treatments come from
+     card-brand.css; judge-specific treatments from card-judge.css. */
+
+  html,body{ width:1080px; height:1080px; }
+
+  .glow{ top:-520px; width:1400px; height:980px; }
+  .dots{
+    background-size:28px 28px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 24%, #000 0%, rgba(0,0,0,0.3) 52%, transparent 76%);
+            mask-image:radial-gradient(ellipse 70% 60% at 50% 24%, #000 0%, rgba(0,0,0,0.3) 52%, transparent 76%);
+  }
+  .orb{ right:-400px; bottom:-400px; width:720px; height:720px; }
+
+  .frame{ padding:84px 84px 76px; }
+
+  /* HOST lockup */
+  .hosts{ gap:18px; height:84px; }
+  .host{ gap:18px; }
+  .host img.orbmark{ height:82px; width:82px; }
+  .host img.savant{ height:64px; }
+  .host .hostname.host-mr{ font-size:42px; }
+  .host .hostname.host-savant{ font-size:38px; }
+  .hosts .x{ font-size:36px; margin:0 2px; }
+
+  /* JUDGE block — headshot centered above name on the square canvas */
+  .body{ margin-top:auto; margin-bottom:auto; }
+  .eyebrow{ font-size:24px; margin-bottom:40px; }
+
+  .judge-row{ flex-direction:column; align-items:flex-start; gap:36px; }
+  .headshot{ width:208px; height:208px; }
+  .headshot.placeholder{ font-size:16px; line-height:1.3; padding:12px; }
+
+  .judge-text{ }
+  .judge-name{ font-size:96px; }
+  .judge-title{ font-size:30px; margin-top:18px; max-width:760px; line-height:1.32; }
+
+  .judge-line{ font-size:46px; margin-top:48px; line-height:1.12; }
+
+  /* FOOTER */
+  .footer{ padding-top:42px; }
+  .apply{ font-size:28px; padding-bottom:6px; }
+  .sponsors{ gap:13px; }
+  .sponsors .label{ font-size:17px; }
+  .sponsors .row{ gap:32px; }
+  .sponsors img.modal{ height:32px; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="dots"></div>
+  <img class="orb" src="logos/mr-orb-masked.png" alt="">
+  <div class="frame">
+    <div class="hosts">
+      <div class="host">
+        <img class="orbmark" src="logos/mr-orb-mark-bright.png" alt="">
+        <span class="hostname host-mr">Mission Robotics</span>
+      </div>
+      <span class="x">&times;</span>
+      <div class="host">
+        <img class="savant" src="logos/savant-glyph-white.png" alt="">
+        <span class="hostname host-savant">savant</span>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="eyebrow">Judge Announcement</div>
+      <div class="judge-row">
+
+        <!-- HEADSHOT SLOT: swap the placeholder div for
+             <img class="headshot" src="logos/judge-NAME.png" alt=""> when you have one. -->
+        <div class="headshot placeholder" style="width:208px;height:208px;">Headshot<br>TBD</div>
+
+        <div class="judge-text">
+          <!-- JUDGE NAME -->
+          <div class="judge-name">Judge Name</div>
+          <!-- JUDGE TITLE / AFFILIATION -->
+          <div class="judge-title">[TITLE TBD]</div>
+        </div>
+      </div>
+
+      <div class="judge-line">is judging <span class="event">The Embodied Metal Hackathon</span><br>July 17–19 &middot; San Francisco</div>
+    </div>
+
+    <div class="footer">
+      <span class="apply"><span class="arrow">Apply &rarr;</span> luma.com/embodied-metal</span>
+      <div class="sponsors">
+        <span class="label">The Embodied Metal Hackathon</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

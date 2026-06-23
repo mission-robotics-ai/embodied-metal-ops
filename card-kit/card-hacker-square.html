@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- brand tokens -->            <link rel="stylesheet" href="card-brand.css">
+<!-- hacker-card extensions -->  <link rel="stylesheet" href="card-hacker.css">
+<style>
+  /* ===== card-hacker-square.html — LAYOUT + per-canvas font-SIZES ONLY =====
+     1080×1080. Brand fonts/colors/logo treatments come from
+     card-brand.css; hacker-specific treatments from card-hacker.css. */
+
+  html,body{ width:1080px; height:1080px; }
+
+  .glow{ top:-520px; width:1400px; height:980px; }
+  .dots{
+    background-size:28px 28px;
+    -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 24%, #000 0%, rgba(0,0,0,0.3) 52%, transparent 76%);
+            mask-image:radial-gradient(ellipse 70% 60% at 50% 24%, #000 0%, rgba(0,0,0,0.3) 52%, transparent 76%);
+  }
+  .orb{ right:-280px; bottom:-260px; width:820px; height:820px; opacity:0.32; }
+
+  .frame{ padding:84px 84px 76px; }
+
+  /* HOST lockup */
+  .hosts{ gap:18px; height:84px; }
+  .host{ gap:18px; }
+  .host img.orbmark{ height:82px; width:82px; }
+  .host img.savant{ height:64px; }
+  .host .hostname.host-mr{ font-size:42px; }
+  .host .hostname.host-savant{ font-size:38px; }
+  .hosts .x{ font-size:36px; margin:0 2px; }
+
+  /* HACKER block — eyebrow, then big "I'm hacking …" line, then date */
+  .body{ margin-top:auto; margin-bottom:auto; }
+  .eyebrow{ font-size:24px; margin-bottom:40px; }
+
+  .hacker-line{ font-size:92px; max-width:900px; }
+  .hacker-line .event{ font-size:84px; }
+  .hacker-when{ font-size:46px; margin-top:40px; line-height:1.12; }
+  .tagline{ font-size:48px; margin-top:30px; line-height:1.0; }
+
+  /* FOOTER */
+  .footer{ padding-top:42px; }
+  .apply{ font-size:28px; padding-bottom:6px; }
+  .sponsors{ gap:13px; }
+  .sponsors .label{ font-size:24px; }
+  /* hacker footer: tag in mint, normal case — not the dim tracked sponsor label */
+  .sponsors .hashtag{ font-family:'Inter',sans-serif; font-weight:600;
+    letter-spacing:0.01em; text-transform:none; color:var(--mint); font-size:24px; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="dots"></div>
+  <img class="orb" src="logos/mr-orb-masked.png" alt="">
+  <div class="frame">
+    <div class="hosts">
+      <div class="host">
+        <img class="orbmark" src="logos/mr-orb-mark-bright.png" alt="">
+        <span class="hostname host-mr">Mission Robotics</span>
+      </div>
+      <span class="x">&times;</span>
+      <div class="host">
+        <img class="savant" src="logos/savant-glyph-white.png" alt="">
+        <span class="hostname host-savant">savant</span>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="eyebrow">&#10003;&ensp;Accepted</div>
+      <!-- HACKER LINE: "I'm hacking" (generic) or "[NAME] is hacking" (named) -->
+      <div class="hacker-line">I'm hacking <span class="event">The Embodied Metal Hackathon</span></div>
+      <div class="hacker-when">July 17–19 &middot; San Francisco</div>
+      <div class="tagline">Put a mind in the metal.</div>
+    </div>
+
+    <div class="footer">
+      <span class="apply"><span class="arrow">Build with us &rarr;</span> luma.com/embodied-metal</span>
+      <div class="sponsors">
+        <span class="hashtag">#EmbodiedMetal</span>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

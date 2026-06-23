@@ -1,0 +1,167 @@
+/* ============================================================
+   card-brand.css — SINGLE SOURCE OF TRUTH for the Embodied
+   Metal Hackathon cards (OG + Square).
+
+   Every brand FONT, WEIGHT, CASE, COLOR, and LOGO TREATMENT is
+   defined here exactly once. The individual card files
+   (card-og.html, card-square.html) set only LAYOUT and per-canvas
+   font-SIZES — they MUST NOT redefine font-family, font-weight,
+   text-transform, color, or logo treatment.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap');
+
+:root{
+  /* --- canonical color vars --- */
+  --bg:#0b0e0c;       /* background */
+  --panel:#11150f;
+  --line:#232b1d;     /* hairline rules */
+  --ink:#d7e0cf;      /* dim/light body ink */
+  --green:#46e07a;    /* the one green accent, everywhere */
+  --mint:#b4ffcf;
+  --dim:#2a8c4d;      /* deeper green, used for the "x" separator */
+  --cream:#e8e6dd;    /* warm off-white for hero + wordmarks */
+  --sponsor-label:#8a957c;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  background:var(--bg);
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);
+  position:relative;
+  overflow:hidden;
+}
+
+/* ---------- BACKGROUND: green radial glow + dot-matrix ---------- */
+.glow{
+  position:absolute; left:50%; transform:translateX(-50%);
+  background:radial-gradient(ellipse 50% 50% at 50% 50%,
+    rgba(70,224,122,0.34) 0%,
+    rgba(42,140,77,0.12) 42%,
+    rgba(11,14,12,0) 72%);
+  pointer-events:none;
+}
+.dots{
+  position:absolute; inset:0;
+  background-image:radial-gradient(rgba(70,224,122,0.09) 1.3px, transparent 1.5px);
+  background-position:center;
+  pointer-events:none;
+}
+/* faint dot-matrix orb texture in one corner */
+.orb{
+  position:absolute;
+  opacity:0.20;
+  pointer-events:none;
+  z-index:1;
+  -webkit-mask-image:radial-gradient(circle at 50% 50%, #000 20%, transparent 54%);
+          mask-image:radial-gradient(circle at 50% 50%, #000 20%, transparent 54%);
+}
+
+.frame{
+  position:absolute; inset:0;
+  display:flex; flex-direction:column;
+  z-index:2;
+}
+
+/* ============================================================
+   HOST LOCKUP (top-left) — one tight connected unit:
+   MR orb + "Mission Robotics" (serif) × savant glyph + "savant"
+   ============================================================ */
+.hosts{ display:flex; align-items:center; }
+.host{ display:flex; align-items:center; }
+
+.host img.orbmark{ object-fit:contain; }
+.host img.savant{ width:auto; }
+
+.host .hostname{
+  color:var(--cream);
+  line-height:0.96;
+}
+/* Mission Robotics wordmark — Instrument Serif, 400, title case */
+.host .hostname.host-mr{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+  letter-spacing:0.005em;
+  text-transform:none;
+}
+/* savant wordmark — Inter, 500, lowercase */
+.host .hostname.host-savant{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  letter-spacing:0;
+  text-transform:lowercase;
+}
+/* green "x" separator between the two hosts */
+.hosts .x{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+  color:var(--green);
+  opacity:0.9;
+}
+
+/* ============================================================
+   HERO TITLE — the ONLY place Archivo Black is used.
+   "EMBODIED METAL HACKATHON", warm cream, tight, fills width.
+   ============================================================ */
+.hero{}
+.wordmark{
+  font-family:'Archivo Black',sans-serif;
+  font-weight:400;
+  color:var(--cream);
+  line-height:0.98;
+  letter-spacing:-0.012em;
+  text-transform:uppercase;
+  text-shadow:0 0 70px rgba(70,224,122,0.12);
+}
+
+/* ---------- DATE LINE — Inter, dim ink ---------- */
+.dateplace{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  letter-spacing:0.01em;
+  color:var(--ink);
+}
+
+/* ---------- TAGLINE — Instrument Serif italic; "real things" green ---------- */
+.tagline{
+  font-family:'Instrument Serif',serif;
+  font-style:italic;
+  color:var(--green);   /* whole line green (the #46e07a used on "real things") */
+  opacity:1;
+}
+.tagline .accent{ color:var(--green); font-style:italic; }
+
+/* ============================================================
+   FOOTER — left: Apply link (green) | right: Sponsored by + Modal
+   ============================================================ */
+.footer{
+  margin-top:auto;
+  display:flex; align-items:flex-end; justify-content:space-between;
+  border-top:1px solid var(--line);
+}
+/* Apply → luma.com/embodied-metal — Inter 600, green */
+.apply{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  color:var(--green);
+  letter-spacing:0.005em;
+  white-space:nowrap;
+}
+.apply .arrow{ opacity:0.7; }
+
+/* SPONSORED BY label + single white Modal logo */
+.sponsors{
+  display:flex; flex-direction:column; align-items:flex-end;
+  position:relative; z-index:3;
+}
+.sponsors .label{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--sponsor-label);
+}
+.sponsors .row{ display:flex; align-items:center; }
+.sponsors img.modal{ width:auto; }

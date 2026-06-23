@@ -1,0 +1,58 @@
+/* ============================================================
+   card-sponsor.css — Rerun $10k sponsor-announcement EXTENSIONS.
+   Loaded AFTER card-brand.css. Reuses every brand font / color /
+   logo treatment and adds ONLY the sponsor-announcement pieces:
+   the eyebrow, the big amount, and the split line. No brand token
+   is redefined here.
+   ============================================================ */
+
+/* eyebrow — Inter spaced caps, green (same rhythm as .sponsors .label) */
+.eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--green);
+}
+
+/* the headline lockup: "$10,000" in Archivo Black (the one hero face) */
+.amount{
+  font-family:'Archivo Black',sans-serif;
+  font-weight:400;
+  color:var(--cream);
+  line-height:0.96;
+  letter-spacing:-0.012em;
+  text-shadow:0 0 70px rgba(70,224,122,0.14);
+}
+/* "Rerun is putting up" / "to The Embodied Metal Hackathon" connective —
+   Instrument Serif cream, the sponsor name picked out in green. */
+.sponsor-line{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+  color:var(--cream);
+  letter-spacing:0.005em;
+}
+.sponsor-line .name{ color:var(--green); font-style:italic; }
+
+/* split breakdown — Inter dim ink, two halves separated by the green x */
+.split{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  color:var(--ink);
+  letter-spacing:0.01em;
+}
+.split .x{
+  font-family:'Instrument Serif',Georgia,serif;
+  color:var(--green); opacity:0.9; font-weight:400;
+}
+.split b{ color:var(--cream); font-weight:600; }
+
+/* Rerun wordmark in the footer sponsor slot — Inter 600, cream, lowercase
+   (matches Rerun's own lowercase wordmark) */
+.rerun-mark{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  text-transform:lowercase;
+  letter-spacing:-0.01em;
+  color:var(--cream);
+}

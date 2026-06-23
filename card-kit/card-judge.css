@@ -1,0 +1,71 @@
+/* ============================================================
+   card-judge.css — judge-announcement EXTENSIONS only.
+   Loaded AFTER card-brand.css. Reuses every brand font / color /
+   logo treatment from card-brand.css and adds ONLY the pieces a
+   judge card needs: the "JUDGING" eyebrow, the judge name + title
+   block, and the headshot slot. No brand token is redefined here.
+   ============================================================ */
+
+/* JUDGING eyebrow — Inter, spaced caps, green (matches sponsor label rhythm) */
+.eyebrow{
+  font-family:'Inter',sans-serif;
+  font-weight:600;
+  letter-spacing:0.24em;
+  text-transform:uppercase;
+  color:var(--green);
+}
+
+/* Judge name — the hero slot, Archivo Black (the one place it's used),
+   same treatment as .wordmark so the lockup stays on-brand. */
+.judge-name{
+  font-family:'Archivo Black',sans-serif;
+  font-weight:400;
+  color:var(--cream);
+  line-height:0.98;
+  letter-spacing:-0.012em;
+  text-transform:uppercase;
+  text-shadow:0 0 70px rgba(70,224,122,0.12);
+}
+
+/* Judge title / affiliation — Inter dim ink, sits under the name */
+.judge-title{
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  letter-spacing:0.005em;
+  color:var(--ink);
+}
+
+/* "is judging" connective + event line — Instrument Serif, cream */
+.judge-line{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-weight:400;
+  color:var(--cream);
+  letter-spacing:0.005em;
+}
+.judge-line .event{ color:var(--green); font-style:italic; }
+
+/* HEADSHOT slot — circular, green hairline ring to echo the orb mark.
+   When no image is supplied, .headshot.placeholder shows a labeled stub. */
+.headshot{
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--green);
+  box-shadow:0 0 60px rgba(70,224,122,0.18);
+  flex:none;
+}
+.headshot.placeholder{
+  display:flex; align-items:center; justify-content:center;
+  background:var(--panel);
+  border:2px dashed var(--dim);
+  color:var(--sponsor-label);
+  font-family:'Inter',sans-serif;
+  font-weight:500;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  text-align:center;
+  box-shadow:none;
+}
+
+/* row that pairs headshot + name/title text block */
+.judge-row{ display:flex; align-items:center; }
+.judge-text{ display:flex; flex-direction:column; }

@@ -4,6 +4,8 @@ Shareable assets and ops for **The Embodied Metal Hackathon** (July 17–19, Mis
 
 This repo is public so assets are linkable — hand a raw URL to a judge, a sponsor, or drop one into a Luma cover.
 
+Generate on-brand cards yourself → see [`card-kit/`](card-kit/).
+
 ## What's here
 
 ### `assets/social/`
